@@ -115,6 +115,7 @@ if __name__ == '__main__':
     numbers = [17, 4 , 1, 20, 9, 23, 18, 34, 18, 4]
     numbers_tree = build_tree(numbers)
     
+    print("Numbers")
     print("Search:", numbers_tree.search(21))
     print("Minimum:",numbers_tree.find_min())
     print("Maximum:",numbers_tree.find_max())
@@ -122,4 +123,15 @@ if __name__ == '__main__':
     print("In order traversal:", numbers_tree.in_order_traversal())
     print("Pre order traversal:", numbers_tree.pre_order_traversal())
     print("Post order traversal:", numbers_tree.post_order_traversal())
+    
+    myName = ["C", "H", "R", "I", "S", "T", "I", "N", "E", "S", "A", "L", "V", "A", "N", "T", "E", "I", "L", "A", "G", "A", "N"]
+    myName_tree = build_tree(myName)
+    
+    print("\nLetters")
+    print("Search:", myName_tree.search("C"))
+    print("Minimum:",myName_tree.find_min())
+    print("Maximum:",myName_tree.find_max())
+    print("In order traversal:", myName_tree.in_order_traversal())
+    print("Pre order traversal:", myName_tree.pre_order_traversal())
+    print("Post order traversal:", myName_tree.post_order_traversal())
     
