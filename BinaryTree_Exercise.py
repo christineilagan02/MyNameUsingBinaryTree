@@ -60,6 +60,12 @@ class BinarySearchTreeNode:
                 return self.right.search(val)
             else:
                 return False
+            
+    # finds minimum element in entire binary tree
+    def find_min(self):
+        if self.left == None:
+            return self.data
+        return self.left.find_min()
     
 # build tree
 def build_tree(elements):
@@ -74,5 +80,7 @@ def build_tree(elements):
 if __name__ == '__main__':
     numbers = [17, 4 , 1, 20, 9, 23, 18, 34, 18, 4]
     numbers_tree = build_tree(numbers)
+    
     print(numbers_tree.search(21))
+    print("Min:",numbers_tree.find_min())
     
