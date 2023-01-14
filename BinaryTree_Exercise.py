@@ -1,6 +1,8 @@
 # Binary Tree 
 # src: https://youtu.be/lFq5mYUWEBk
 
+import sys
+
 class BinarySearchTreeNode:
     def __init__(self, data):
         self.data = data
@@ -110,28 +112,82 @@ def build_tree(elements):
         
     return root
   
-# list off numbers 
+# list off numbers and letters
 if __name__ == '__main__':
-    numbers = [17, 4 , 1, 20, 9, 23, 18, 34, 18, 4]
-    numbers_tree = build_tree(numbers)
     
-    print("Numbers")
-    print("Search:", numbers_tree.search(21))
-    print("Minimum:",numbers_tree.find_min())
-    print("Maximum:",numbers_tree.find_max())
-    print("Calculate Sum:", numbers_tree.calculate_sum())
-    print("In order traversal:", numbers_tree.in_order_traversal())
-    print("Pre order traversal:", numbers_tree.pre_order_traversal())
-    print("Post order traversal:", numbers_tree.post_order_traversal())
+    def menu():
+        print("\t\33[1m\33[33m*\33[0m---+---+--\33[1m\33[33mMENU\33[0m--+---+---\33[1m\33[33m*\33[0m")
+        menu_list = ["\n\t \33[3m\33[1m 1 -> Numbers \33[0m", "\t \33[3m\33[1m 2 -> Letters \33[0m", "\t \33[3m\33[1m 7 -> Exit \33[0m\n"]
+        for item in menu_list:
+            print(item)
+        print("\t\33[1m\33[33m*\33[0m---+---+---\33[1m\33[33m*\33[0m---+---+---\33[1m\33[33m*\33[0m")
+            
+    def start():
+        while True:
+            choice = input("\n\t\33[92mEnter your choice[1-3]\33[0m \n\t>> ")
+            if choice == '1':
+                numbers = [17, 4 , 1, 20, 9, 23, 18, 34, 18, 4]
+                numbers_tree = build_tree(numbers)
+                
+                print("\n\t\33[1m\33[33m*\33[0m---+---+---\33[1m\33[33m*\33[0m---+---+---\33[1m\33[33m*\33[0m")
+                print("\t\t\33[1m Numbers \33[0m")
+                print("\t\33[1m\33[33m*\33[0m---+---+---\33[1m\33[33m*\33[0m---+---+---\33[1m\33[33m*\33[0m")
+                
+                search_numbers = int(input("\n\t\33[1mSearch: \33[0m"))
+                print("\n\t\33[1m\33[33m*\33[0m---+---+---\33[1m\33[33m*\33[0m---+---+---\33[1m\33[33m*\33[0m")
+                
+                print(f"\n\t\33[1mIs {search_numbers} included in the list \n\t>> \33[0m", numbers_tree.search(search_numbers))
+                print("\t\33[92m=========================\33[0m")
+                print("\t\33[1mMinimum: \33[0m",numbers_tree.find_min())
+                print("\t\33[92m=========================\33[0m")
+                print("\t\33[1mMaximum: \33[0m",numbers_tree.find_max())
+                print("\t\33[92m=========================\33[0m")
+                print("\t\33[1mCalculate Sum: \33[0m", numbers_tree.calculate_sum())
+                print("\t\33[92m=========================\33[0m")
+                print("\t\33[1mIn order traversal \n\t>> \33[0m", numbers_tree.in_order_traversal())
+                print("\t\33[92m=========================\33[0m")
+                print("\t\33[1mPre order traversal \n\t>> \33[0m", numbers_tree.pre_order_traversal())
+                print("\t\33[92m=========================\33[0m")
+                print("\t\33[1mPost order traversal \n\t>> \33[0m", numbers_tree.post_order_traversal())
+                print("\t\33[92m=========================\33[0m")
+                
+            elif choice == '2':
+                myName = ["C", "H", "R", "I", "S", "T", "I", "N", "E", "S", "A", "L", "V", "A", "N", "T", "E", "I", "L", "A", "G", "A", "N"]
+                myName_tree = build_tree(myName)
+                
+                print("\n\t\33[1m\33[33m*\33[0m---+---+---\33[1m\33[33m*\33[0m---+---+---\33[1m\33[33m*\33[0m")
+                print("\t\t\33[1m Letters \33[0m")
+                print("\t\33[1m\33[33m*\33[0m---+---+---\33[1m\33[33m*\33[0m---+---+---\33[1m\33[33m*\33[0m")
+                
+                search_letters = input("\n\t\33[1mSearch (UPPERCASE ONLY): \n\t>> \33[0m")
+                print("\n\t\33[1m\33[33m*\33[0m---+---+---\33[1m\33[33m*\33[0m---+---+---\33[1m\33[33m*\33[0m")
+                print(f"\n\t\33[1mIs {search_letters} included in the list \n\t>> \33[0m", myName_tree.search(search_letters))
+                print("\t\33[92m=========================\33[0m")
+                print("\t\33[1mMinimum: \33[0m",myName_tree.find_min())
+                print("\t\33[92m=========================\33[0m")
+                print("\t\33[1mMaximum: \33[0m",myName_tree.find_max())
+                print("\t\33[92m=========================\33[0m")
+                print("\t\33[1mIn order traversal \n\t>> \33[0m", myName_tree.in_order_traversal())
+                print("\t\33[92m=========================\33[0m")
+                print("\t\33[1mPre order traversal \n\t>> \33[0m", myName_tree.pre_order_traversal())
+                print("\t\33[92m=========================\33[0m")
+                print("\t\33[1mPost order traversal \n\t>> \33[0m", myName_tree.post_order_traversal())
+                print("\t\33[92m=========================\33[0m")
     
-    myName = ["C", "H", "R", "I", "S", "T", "I", "N", "E", "S", "A", "L", "V", "A", "N", "T", "E", "I", "L", "A", "G", "A", "N"]
-    myName_tree = build_tree(myName)
-    
-    print("\nLetters")
-    print("Search:", myName_tree.search("C"))
-    print("Minimum:",myName_tree.find_min())
-    print("Maximum:",myName_tree.find_max())
-    print("In order traversal:", myName_tree.in_order_traversal())
-    print("Pre order traversal:", myName_tree.pre_order_traversal())
-    print("Post order traversal:", myName_tree.post_order_traversal())
-    
+            elif choice == '3':
+                print("\n")
+                print("\t\33[1m\33[33m*\33[0m---+---+---\33[1m\33[33m*\33[0m---+---+---\33[1m\33[33m*\33[0m")
+                print ("\t\33[1m\33[93m\33[3m   You can now exit.\33[0m")
+                print("\t\33[1m\33[33m*\33[0m---+---+---\33[1m\33[33m*\33[0m---+---+---\33[1m\33[33m*\33[0m")
+                sys.exit("\n")
+            
+            else:
+                print("\t\33[1m\33[33m*\33[0m---+---+---\33[1m\33[33m*\33[0m---+---+---\33[1m\33[33m*\33[0m")
+                print("\33[31m\33[1m\tError! Invalid input.\33[0m")
+                print("\33[31m\33[1m\tPlease try again...\33[0m")
+                print("\t\33[1m\33[33m*\33[0m---+---+---\33[1m\33[33m*\33[0m---+---+---\33[1m\33[33m*\33[0m")
+    def main():
+        menu()
+        start()       
+                
+main()
